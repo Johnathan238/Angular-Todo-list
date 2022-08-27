@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { PeriodicElement, ELEMENT_DATA } from './todo-interface/data-table';
+import { APIService } from '../service/api.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,12 +10,16 @@ import { PeriodicElement, ELEMENT_DATA } from './todo-interface/data-table';
 
 export class TodoListComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  @Output() dataSource = ELEMENT_DATA
+  dataSource = ELEMENT_DATA
 
-  constructor() { }
+  constructor(private apiService: APIService) { }
 
   ngOnInit(): void {
     console.log("🚀 ~ file: todo-list.component.ts ~ line 13 ~ TodoListComponent ~ dataSource", this.dataSource)
+    this.apiService.getUrl()
+    .subscribe((data) => this.data = {
+      
+    })
   }
 
 }
