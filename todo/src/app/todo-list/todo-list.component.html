@@ -1,11 +1,32 @@
 <app-navbar></app-navbar>
-<table class="table table-striped" >
-  <!-- On cells (`td` or `th`) -->
+<!-- <table class="table table-striped" >
   <tr *ngFor="let element of elements">
     <td class="active">{{element.completed}}</td>
     <td class="success">{{element.id}}</td>
     <td class="warning">{{element.title}}</td>
     <td class="danger">{{element.userId}}</td>
   </tr>
+</table> -->
+<div class="table-responsive">
+  <table class="table" *ngFor="let element of elements">
+  <caption>List of users</caption>
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">userId</th>
+      <th scope="col">Title</th>
+      <th scope="col">completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{element.id}}</td>
+      <td>{{element.userId}}</td>
+      <td>{{element.title}}</td>
+      <td>{{element.completed}}</td>
+    </tr>
+  </tbody>
 </table>
+</div>
 <app-footer></app-footer>
+
