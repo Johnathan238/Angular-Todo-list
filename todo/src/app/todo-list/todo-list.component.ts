@@ -17,10 +17,8 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getUrl()
     .subscribe((response: any) => {
-    response.results.forEach((results: any) => {
-      console.log(results);
-      this.elements.push(results)
-    })
+    console.log(response);
+
   })
   }
 

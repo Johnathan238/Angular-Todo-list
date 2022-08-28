@@ -14,7 +14,7 @@ export class APIService {
 
   Url = `https://jsonplaceholder.typicode.com/todos`
 
-  getUrl(){
+  getUrl(): Observable<tableElement>{
     return this.http.get<tableElement>(this.Url)
   }
 }
