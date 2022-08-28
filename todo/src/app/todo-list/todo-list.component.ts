@@ -18,6 +18,8 @@ export class TodoListComponent implements OnInit {
     this.apiService.getUrl()
     .subscribe((response: any) => {
     console.log(response);
+    this.elements.push(...response)
+    console.log(this.elements);
 
   })
   }
