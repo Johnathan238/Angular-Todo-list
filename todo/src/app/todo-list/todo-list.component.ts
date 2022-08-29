@@ -20,7 +20,6 @@ export class TodoListComponent implements OnInit {
     console.log(response);
     this.elements.push(...response)
     console.log(this.elements);
-
   })
   }
 
